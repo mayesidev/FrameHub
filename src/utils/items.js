@@ -22,6 +22,14 @@ export function itemIsFaction(name) {
 	);
 }
 
+export function itemIsAdversary(name) {
+	return (
+		name.startsWith("Kuva ") ||
+		name.startsWith("Tenet ") ||
+		name.startsWith("Coda ")
+	);
+}
+
 export function getComponentImageUrl(id) {
 	return (
 		"https://cdn.jsdelivr.net/gh/Aericio/warframe-exports-data/image/32x32/" +

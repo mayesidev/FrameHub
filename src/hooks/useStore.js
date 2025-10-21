@@ -498,6 +498,8 @@ export const useStore = createWithEqualityFn(
 		setHidePrime: firestoreFieldSetter("hidePrime"),
 		hideFaction: false,
 		setHideFaction: firestoreFieldSetter("hideFaction"),
+		hideAdversary: false,
+		setHideAdversary: firestoreFieldSetter("hideAdversary"),
 		hideFounders: true,
 		setHideFounders: firestoreFieldSetter("hideFounders"),
 
