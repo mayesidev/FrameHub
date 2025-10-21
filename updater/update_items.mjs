@@ -6,6 +6,7 @@ import fetch from "node-fetch";
 import { JSDOM } from "jsdom";
 import { setOutput } from "@actions/core";
 import { fetchEndpoint } from "./warframe_exports.mjs";
+import { itemIsAnniversary, itemIsCoda, itemIsKuva, itemIsMeridian, itemIsTenet, itemIsVeil, itemIsLoka, itemIsArbiters, itemIsCephalon, itemIsPerrin } from "../src/utils/items";
 
 const SCHEMA_VERSION = 3;
 
@@ -321,32 +322,38 @@ class ItemUpdater {
 	}
 
 	describeItem(itemName) {
-		const prefix = itemName.split(" ")[0];
-		switch (prefix) {
-			case "Dex":
-				return "Acquire from yearly anniversary alerts";
-			case "Vaykor":
-				return "Purchase from Steel Meridian for 125,000 standing";
-			case "Rakta":
-				return "Purchase from Red Veil for 125,000 standing";
-			case "Secura":
-				return "Purchase from The Perrin Sequence for 125,000 standing";
-			case "Sancti":
-				return "Purchase from New Loka for 125,000 standing";
-			case "Telos":
-				return "Purchase from Arbiters of Hexis for 125,000 standing";
-			case "Synoid":
-				return "Purchase from Cephalon Suda for 125,000 standing";
-			case "Kuva":
-				return "Acquire by vanquishing a Kuva Lich";
-			case "Tenet":
-				if (SISTER_WEAPONS.includes(itemName))
-					return "Acquire by vanquishing a Sister of Parvos";
-				if (HOLOKEY_WEAPONS.includes(itemName))
-					return "Purchase from Ergo Glast for 40 Corrupted Holokeys";
-				break;
-			case "Coda":
-				return "Purchase from Eleanor in the Höllvania Central Mall for 10 Live Heartcells";
+		if(itemIsAnniversary(itemName)){
+			return "Acquire from yearly anniversary alerts";
+		}
+		if(itemIsMeridian(itemName)){
+			return "Purchase from Steel Meridian for 125,000 standing";
+		}
+		if(itemIsVeil(itemName)){
+			return "Purchase from Red Veil for 125,000 standing";
+		}
+		if(itemIsPerrin(itemName)){
+			return "Purchase from The Perrin Sequence for 125,000 standing";
+		}
+		if(itemIsLoka(itemName)){
+			return "Purchase from New Loka for 125,000 standing";
+		}
+		if(itemIsArbiters(itemName)){
+			return "Purchase from Arbiters of Hexis for 125,000 standing";
+		}
+		if(itemIsCephalon(itemName)){
+			return "Purchase from Cephalon Suda for 125,000 standing";
+		}
+		if(itemIsKuva(itemName)){
+			return "Acquire by vanquishing a Kuva Lich";
+		}
+		if(itemIsTenet(itemName)){
+			if (SISTER_WEAPONS.includes(itemName))
+				return "Acquire by vanquishing a Sister of Parvos";
+			if (HOLOKEY_WEAPONS.includes(itemName))
+				return "Purchase from Ergo Glast for 40 Corrupted Holokeys";
+		}
+		if(itemIsCoda(itemName)){
+			return "Purchase from Eleanor in the Höllvania Central Mall for 10 Live Heartcells";
 		}
 	}
 
