@@ -31,15 +31,26 @@ export function itemIsFaction(name) {
 }
 
 export function itemIsAdversary(name) {
-	const kuvaRegex = /(^|\s)Kuva(\s|$)/;
-	const tenetRegex = /(^|\s)Tenet(\s|$)/;
-	const codaRegex = /(^|\s)Coda(\s|$)/;
-
 	return (
-		kuvaRegex.test(name) ||
-		tenetRegex.test(name) ||
-		codaRegex.test(name)
+		itemIsKuva(name) ||
+		itemIsTenet(name) ||
+		itemIsCoda(name)
 	);
+}
+
+export function itemIsKuva(name){
+	const kuvaRegex = /(^|\s)Kuva(\s|$)/;
+	return kuvaRegex.test(name);
+}
+
+export function itemIsTenet(name){
+	const tenetRegex = /(^|\s)Tenet(\s|$)/;
+	return tenetRegex.test(name);
+}
+
+export function itemIsCoda(name){
+	const codaRegex = /(^|\s)Coda(\s|$)/;
+	return codaRegex.test(name);
 }
 
 export function itemIsAnniversary(name){
