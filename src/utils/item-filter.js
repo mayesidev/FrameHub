@@ -1,4 +1,8 @@
-import { foundersItems, itemIsPrime, itemIsFaction, itemIsAdversary, itemIsAnniversary } from "./items";
+import { itemIsFounders, itemIsPrime, itemIsFaction, itemIsAdversary, itemIsAnniversary } from "./items";
+
+export function isFilteredFounders(hideFounders, itemName){
+	return hideFounders && itemIsFounders(itemName);
+}
 
 export function isItemFiltered(
 	itemName,
@@ -10,7 +14,7 @@ export function isItemFiltered(
 	}
 
 	return (
-		(hideFounders && foundersItems.includes(itemName)) ||
+		isFilteredFounders(hideFounders, itemName) ||
 		(hidePrime && itemIsPrime(itemName)) ||
 		(hideFaction && itemIsFaction(itemName)) ||
 		(hideAdversary && itemIsAdversary(itemName)) ||

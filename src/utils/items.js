@@ -2,13 +2,16 @@ import PropTypes from "prop-types";
 
 export const SCHEMA_VERSION = 3;
 
-export const foundersItems = ["Excalibur Prime", "Skana Prime", "Lato Prime"];
+export function itemIsFounders(name) {
+	const foundersItems = ["Excalibur Prime", "Skana Prime", "Lato Prime"];
+	return foundersItems.includes(name);
+}
 
 export function itemIsPrime(name) {
 	const primeRegex = /(^|\s)Prime(\s|$)/;
 	return (
 		primeRegex.test(name) &&
-		!foundersItems.includes(name)
+		!itemIsFounders(name)
 	);
 }
 

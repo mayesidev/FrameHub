@@ -16,7 +16,7 @@ import { createWithEqualityFn } from "zustand/traditional";
 import { firestore, storage } from "../App";
 import { ANONYMOUS, SHARED } from "../utils/checklist-types";
 import { assignGroup } from "../utils/hash";
-import { foundersItems, SCHEMA_VERSION } from "../utils/items";
+import { itemIsFounders, SCHEMA_VERSION } from "../utils/items";
 import {
 	intrinsicsToXP,
 	itemLevelByXP,
@@ -254,8 +254,7 @@ export const useStore = createWithEqualityFn(
 					addItemXP(item, partiallyMasteredItems[itemName]);
 				}
 				if (
-					hideFounders &&
-					foundersItems.includes(itemName) &&
+					isFilteredFounders(hideFounders, itemName) &&
 					!itemsMastered.has(itemName)
 				)
 					return;
@@ -305,7 +304,7 @@ export const useStore = createWithEqualityFn(
 				Object.keys(get().flattenedItems).filter(
 					i =>
 						!get().hideFounders ||
-						!foundersItems.includes(i) ||
+						!itemIsFounders(i) ||
 						get().itemsMastered.has(i)
 				),
 				mastered
