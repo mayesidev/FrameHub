@@ -42,6 +42,11 @@ export function itemIsAdversary(name) {
 	);
 }
 
+export function itemIsAnniversary(name){
+	const anniversaryRegex = /(^|\s)Dex(\s|$)/;
+	return anniversaryRegex.test(name);
+}
+
 export function getComponentImageUrl(id) {
 	return (
 		"https://cdn.jsdelivr.net/gh/Aericio/warframe-exports-data/image/32x32/" +

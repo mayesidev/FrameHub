@@ -500,6 +500,8 @@ export const useStore = createWithEqualityFn(
 		setHideFaction: firestoreFieldSetter("hideFaction"),
 		hideAdversary: false,
 		setHideAdversary: firestoreFieldSetter("hideAdversary"),
+		hideAnniversary: false,
+		setHideAnniversary: firestoreFieldSetter("hideAnniversary"),
 		hideFounders: true,
 		setHideFounders: firestoreFieldSetter("hideFounders"),
 

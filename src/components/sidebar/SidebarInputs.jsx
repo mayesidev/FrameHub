@@ -23,6 +23,8 @@ function SidebarInputs() {
 		setHideFaction,
 		hideAdversary,
 		setHideAdversary,
+		hideAnniversary,
+		setHideAnniversary,
 		hideFounders,
 		setHideFounders,
 		displayingNodes,
@@ -43,6 +45,8 @@ function SidebarInputs() {
 		setHideFaction: state.setHideFaction,
 		hideAdversary: state.hideAdversary,
 		setHideAdversary: state.setHideAdversary,
+		hideAnniversary: state.hideAnniversary,
+		setHideAnniversary: state.setHideAnniversary,
 		hideFounders: state.hideFounders,
 		setHideFounders: state.setHideFounders,
 		displayingNodes: state.displayingNodes,
@@ -117,6 +121,13 @@ function SidebarInputs() {
 					label="Hide Adversary"
 					toggled={hideAdversary}
 					onToggle={setHideAdversary}
+				/>
+			)}
+			{!displayingNodes && (
+				<LabeledToggle
+					label="Hide Anniversary"
+					toggled={hideAnniversary}
+					onToggle={setHideAnniversary}
 				/>
 			)}
 			{!displayingNodes && (

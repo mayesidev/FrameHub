@@ -1,9 +1,9 @@
-import { foundersItems, itemIsPrime, itemIsFaction, itemIsAdversary } from "./items";
+import { foundersItems, itemIsPrime, itemIsFaction, itemIsAdversary, itemIsAnniversary } from "./items";
 
 export function isItemFiltered(
 	itemName,
 	item,
-	{ itemsMastered, hideMastered, hideFounders, hidePrime, hideFaction, hideAdversary }
+	{ itemsMastered, hideMastered, hideFounders, hidePrime, hideFaction, hideAdversary, hideAnniversary }
 ) {
 	if (itemsMastered.has(itemName)) {
 		return hideMastered;
@@ -13,7 +13,8 @@ export function isItemFiltered(
 		(hideFounders && foundersItems.includes(itemName)) ||
 		(hidePrime && itemIsPrime(itemName)) ||
 		(hideFaction && itemIsFaction(itemName)) ||
-		(hideAdversary && itemIsAdversary(itemName))
+		(hideAdversary && itemIsAdversary(itemName)) ||
+		(hideAnniversary && itemIsAnniversary(itemName))
 	);
 }
 

@@ -32,6 +32,7 @@ function MasteryChecklist(props) {
 		setHidePrime,
 		setHideFaction,
 		setHideAdversary,
+		setHideAnniversary,
 		setHideFounders,
 		displayingNodes,
 		setGameSyncInfo,
@@ -56,6 +57,7 @@ function MasteryChecklist(props) {
 		setHidePrime: state.setHidePrime,
 		setHideFaction: state.setHideFaction,
 		setHideAdversary: state.setHideAdversary,
+		setHideAnniversary: state.setHideAnniversary,
 		setHideFounders: state.setHideFounders,
 		displayingNodes: state.displayingNodes,
 		setGameSyncInfo: state.setGameSyncInfo,
@@ -97,6 +99,7 @@ function MasteryChecklist(props) {
 				setHidePrime(data?.hidePrime ?? false, true);
 				setHideFaction(data?.hideFaction ?? false, true);
 				setHideAdversary(data?.hideAdversary ?? false, true);
+				setHideAnniversary(data?.hideAnniversary ?? false, true);
 				setHideFounders(data?.hideFounders ?? true, true);
 				setNodesMastered(data?.starChart ?? [], false);
 				setNodesMastered(data?.steelPath ?? [], true);
