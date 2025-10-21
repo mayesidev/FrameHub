@@ -19,6 +19,8 @@ function SidebarInputs() {
 		setHideMastered,
 		hidePrime,
 		setHidePrime,
+		hideFaction,
+		setHideFaction,
 		hideFounders,
 		setHideFounders,
 		displayingNodes,
@@ -35,6 +37,8 @@ function SidebarInputs() {
 		setHideMastered: state.setHideMastered,
 		hidePrime: state.hidePrime,
 		setHidePrime: state.setHidePrime,
+		hideFaction: state.hideFaction,
+		setHideFaction: state.setHideFaction,
 		hideFounders: state.hideFounders,
 		setHideFounders: state.setHideFounders,
 		displayingNodes: state.displayingNodes,
@@ -95,6 +99,13 @@ function SidebarInputs() {
 					label="Hide Prime"
 					toggled={hidePrime}
 					onToggle={setHidePrime}
+				/>
+			)}
+			{!displayingNodes && (
+				<LabeledToggle
+					label="Hide Faction"
+					toggled={hideFaction}
+					onToggle={setHideFaction}
 				/>
 			)}
 			{!displayingNodes && (

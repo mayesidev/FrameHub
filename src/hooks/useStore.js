@@ -496,6 +496,8 @@ export const useStore = createWithEqualityFn(
 		setHideMastered: firestoreFieldSetter("hideMastered"),
 		hidePrime: false,
 		setHidePrime: firestoreFieldSetter("hidePrime"),
+		hideFaction: false,
+		setHideFaction: firestoreFieldSetter("hideFaction"),
 		hideFounders: true,
 		setHideFounders: firestoreFieldSetter("hideFounders"),
 

@@ -30,6 +30,7 @@ function MasteryChecklist(props) {
 		setDrifterIntrinsics,
 		setHideMastered,
 		setHidePrime,
+		setHideFaction,
 		setHideFounders,
 		displayingNodes,
 		setGameSyncInfo,
@@ -52,6 +53,7 @@ function MasteryChecklist(props) {
 		setDrifterIntrinsics: state.setDrifterIntrinsics,
 		setHideMastered: state.setHideMastered,
 		setHidePrime: state.setHidePrime,
+		setHideFaction: state.setHideFaction,
 		setHideFounders: state.setHideFounders,
 		displayingNodes: state.displayingNodes,
 		setGameSyncInfo: state.setGameSyncInfo,
@@ -91,6 +93,7 @@ function MasteryChecklist(props) {
 				setDrifterIntrinsics(data?.drifterIntrinsics ?? 0, true);
 				setHideMastered(data?.hideMastered ?? false, true);
 				setHidePrime(data?.hidePrime ?? false, true);
+				setHideFaction(data?.hideFaction ?? false, true);
 				setHideFounders(data?.hideFounders ?? true, true);
 				setNodesMastered(data?.starChart ?? [], false);
 				setNodesMastered(data?.steelPath ?? [], true);

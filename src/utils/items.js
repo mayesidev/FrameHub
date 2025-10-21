@@ -11,6 +11,17 @@ export function itemIsPrime(name) {
 	);
 }
 
+export function itemIsFaction(name) {
+	return (
+		name.startsWith("Vaykor ") ||
+		name.startsWith("Rakta ") ||
+		name.startsWith("Secura ") ||
+		name.startsWith("Sancti ") ||
+		name.startsWith("Telos ") ||
+		name.startsWith("Synoid ")
+	);
+}
+
 export function getComponentImageUrl(id) {
 	return (
 		"https://cdn.jsdelivr.net/gh/Aericio/warframe-exports-data/image/32x32/" +

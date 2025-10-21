@@ -1,9 +1,9 @@
-import { foundersItems, itemIsPrime } from "./items";
+import { foundersItems, itemIsPrime, itemIsFaction } from "./items";
 
 export function isItemFiltered(
 	itemName,
 	item,
-	{ itemsMastered, hideMastered, hideFounders, hidePrime }
+	{ itemsMastered, hideMastered, hideFounders, hidePrime, hideFaction }
 ) {
 	if (itemsMastered.has(itemName)) {
 		return hideMastered;
@@ -11,7 +11,8 @@ export function isItemFiltered(
 
 	return (
 		(hideFounders && foundersItems.includes(itemName)) ||
-		(hidePrime && itemIsPrime(itemName))
+		(hidePrime && itemIsPrime(itemName)) ||
+		(hideFaction && itemIsFaction(itemName))
 	);
 }
 
