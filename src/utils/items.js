@@ -5,28 +5,40 @@ export const SCHEMA_VERSION = 3;
 export const foundersItems = ["Excalibur Prime", "Skana Prime", "Lato Prime"];
 
 export function itemIsPrime(name) {
+	const primeRegex = /(^|\s)Prime(\s|$)/;
 	return (
-		(name.endsWith(" Prime") || name.startsWith("Prime ")) &&
+		primeRegex.test(name) &&
 		!foundersItems.includes(name)
 	);
 }
 
 export function itemIsFaction(name) {
+	const meridianRegex = /(^|\s)Vaykor(\s|$)/;
+	const veilRegex = /(^|\s)Rakta(\s|$)/;
+	const perrinRegex = /(^|\s)Secura(\s|$)/;
+	const lokaRegex = /(^|\s)Sancti(\s|$)/;
+	const arbitersRegex = /(^|\s)Telos(\s|$)/;
+	const cephalonRegex = /(^|\s)Synoid(\s|$)/;
+
 	return (
-		name.startsWith("Vaykor ") ||
-		name.startsWith("Rakta ") ||
-		name.startsWith("Secura ") ||
-		name.startsWith("Sancti ") ||
-		name.startsWith("Telos ") ||
-		name.startsWith("Synoid ")
+		meridianRegex.test(name) ||
+		veilRegex.test(name) ||
+		perrinRegex.test(name) ||
+		lokaRegex.test(name) ||
+		arbitersRegex.test(name) ||
+		cephalonRegex.test(name)
 	);
 }
 
 export function itemIsAdversary(name) {
+	const kuvaRegex = /(^|\s)Kuva(\s|$)/;
+	const tenetRegex = /(^|\s)Tenet(\s|$)/;
+	const codaRegex = /(^|\s)Coda(\s|$)/;
+
 	return (
-		name.startsWith("Kuva ") ||
-		name.startsWith("Tenet ") ||
-		name.startsWith("Coda ")
+		kuvaRegex.test(name) ||
+		tenetRegex.test(name) ||
+		codaRegex.test(name)
 	);
 }
 
