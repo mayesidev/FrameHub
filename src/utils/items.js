@@ -13,21 +13,44 @@ export function itemIsPrime(name) {
 }
 
 export function itemIsFaction(name) {
-	const meridianRegex = /(^|\s)Vaykor(\s|$)/;
-	const veilRegex = /(^|\s)Rakta(\s|$)/;
-	const perrinRegex = /(^|\s)Secura(\s|$)/;
-	const lokaRegex = /(^|\s)Sancti(\s|$)/;
-	const arbitersRegex = /(^|\s)Telos(\s|$)/;
-	const cephalonRegex = /(^|\s)Synoid(\s|$)/;
-
 	return (
-		meridianRegex.test(name) ||
-		veilRegex.test(name) ||
-		perrinRegex.test(name) ||
-		lokaRegex.test(name) ||
-		arbitersRegex.test(name) ||
-		cephalonRegex.test(name)
+		itemIsMeridian(name) ||
+		itemIsVeil(name) ||
+		itemIsPerrin(name) ||
+		itemIsLoka(name) ||
+		itemIsArbiters(name) ||
+		itemIsCephalon(name)
 	);
+}
+
+export function itemIsMeridian(name){
+	const meridianRegex = /(^|\s)Vaykor(\s|$)/;
+	return meridianRegex.test(name);
+}
+
+export function itemIsVeil(name){
+	const veilRegex = /(^|\s)Rakta(\s|$)/;
+	return veilRegex.test(name);
+}
+
+export function itemIsPerrin(name){
+	const perrinRegex = /(^|\s)Secura(\s|$)/;
+	return perrinRegex.test(name);
+}
+
+export function itemIsLoka(name){
+	const lokaRegex = /(^|\s)Sancti(\s|$)/;
+	return lokaRegex.test(name);
+}
+
+export function itemIsArbiters(name){
+	const arbitersRegex = /(^|\s)Telos(\s|$)/;
+	return arbitersRegex.test(name);
+}
+
+export function itemIsCephalon(name){
+	const cephalonRegex = /(^|\s)Synoid(\s|$)/;
+	return cephalonRegex.test(name);
 }
 
 export function itemIsAdversary(name) {
