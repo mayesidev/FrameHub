@@ -6,7 +6,7 @@ import fetch from "node-fetch";
 import { JSDOM } from "jsdom";
 import { setOutput } from "@actions/core";
 import { fetchEndpoint } from "./warframe_exports.mjs";
-import { itemIsAnniversary, itemIsCoda, itemIsKuva, itemIsMeridian, itemIsTenet, itemIsVeil, itemIsLoka, itemIsArbiters, itemIsCephalon, itemIsPerrin } from "../src/utils/items";
+import { itemIsAnniversary, itemIsCoda, itemIsKuva, itemIsMeridian, itemIsTenet, itemIsVeil, itemIsLoka, itemIsArbiters, itemIsCephalon, itemIsPerrin, itemIsFounders } from "../src/utils/items";
 
 const SCHEMA_VERSION = 3;
 
@@ -354,6 +354,9 @@ class ItemUpdater {
 		}
 		if(itemIsCoda(itemName)){
 			return "Purchase from Eleanor in the Höllvania Central Mall for 10 Live Heartcells";
+		}
+		if(itemIsFounders(itemName)){
+			return "No longer obtainable; exclusive to Founders Program";
 		}
 	}
 
