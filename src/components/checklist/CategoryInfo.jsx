@@ -34,7 +34,7 @@ function CategoryItem({ name }) {
 
 			Object.entries(categoryItems).forEach(([itemName, item]) => {
 				if (
-					isItemFiltered(itemName, item, {
+					isItemFiltered(itemName, {
 						...state,
 						hideMastered: false
 					})

@@ -8,7 +8,7 @@ function Checklist() {
 		Object.keys(state.items).filter(category => {
 			return (
 				Object.entries(state.items[category]).some(
-					([itemName, item]) => !isItemFiltered(itemName, item, state)
+					(itemName) => !isItemFiltered(itemName, state)
 				)
 			);
 		})

@@ -6,7 +6,6 @@ export function isFilteredFounders(hideFounders, itemName){
 
 export function isItemFiltered(
 	itemName,
-	item,
 	{ itemsMastered, hideMastered, hideFounders, hidePrime, hideFaction, hideAdversary, hideAnniversary }
 ) {
 	if (itemsMastered.has(itemName)) {

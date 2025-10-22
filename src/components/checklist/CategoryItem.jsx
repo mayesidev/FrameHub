@@ -26,7 +26,7 @@ function CategoryItem({ name, item }) {
 		masteryRankLocked: (item.mr || 0) > state.masteryRank,
 		partialRank: state.partiallyMasteredItems[name],
 		setPartiallyMasteredItem: state.setPartiallyMasteredItem,
-		hidden: isItemFiltered(name, item, state)
+		hidden: isItemFiltered(name, state)
 	}));
 	const [rankSelectToggled, setRankSelectToggled] = useState(false);
 
