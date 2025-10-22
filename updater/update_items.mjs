@@ -58,8 +58,7 @@ const RECIPE_OVERWRITES = {
 		count: 1,
 		time: 600,
 		price: 1000
-	},
-	"Tenet Agendus": undefined
+	}
 };
 const BLACKLIST = [];
 
