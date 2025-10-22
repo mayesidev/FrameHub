@@ -82,7 +82,6 @@ const HOLOKEY_WEAPONS = [
 	"Tenet Grigori",
 	"Tenet Ferrox"
 ];
-const MARKET_WEAPONS = {};
 
 class ItemUpdater {
 	constructor(itemOverwrites, recipeOverwrites, blacklist) {
